@@ -1,7 +1,5 @@
 .app {
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
+    padding-bottom: 20px;
     background-image: url("https://static.wixstatic.com/media/38f3fd1ebc4842c7b8d5aef6b147a6db.png/v1/crop/x_0,y_0,w_201,h_201,q_85/38f3fd1ebc4842c7b8d5aef6b147a6db.webp");
     background-size: auto;
     background-repeat: repeat;

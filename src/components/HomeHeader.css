@@ -1,0 +1,35 @@
+.homeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: rgb(0, 168, 89);
+}
+
+.homeHeader__logo {
+    align-items: center;
+    width: 120px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.homeHeader__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.homeHeader__navAllData {
+    border: 5px solid palegreen;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.homeHeader__navLogout {
+    border: 5px solid rgb(255, 142, 142);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}

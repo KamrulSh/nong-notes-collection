@@ -1,15 +1,30 @@
 import React, { useState } from "react";
 import logo from "../nonglogo.webp";
 import "./Login.css";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, makeStyles } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { auth } from "../firebase";
 import { useHistory } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        display: "flex",
+        flexWrap: "wrap",
+    },
+    textField: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+}));
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory("");
+    const classes = useStyles();
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -72,8 +87,8 @@ function Login() {
                         type="submit"
                         variant="contained"
                         color="primary"
-                        className="login__button"
                         fullWidth
+                        className={classes.submit}
                     >
                         Log In
                     </Button>

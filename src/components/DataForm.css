@@ -1,0 +1,30 @@
+.dataform {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.dataform__username {
+    color: yellow;
+}
+
+.dataform__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    min-width: 400px;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.dataform__header {
+    color: black;
+    width: fit-content;
+    align-items: center;
+    margin-bottom: 40px;
+}
