@@ -1,9 +1,23 @@
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
 import Login from "./pages/Login";
+import { auth } from "./firebase";
+import HomeHeader from "./components/HomeHeader";
+import DataForm from "./components/DataForm";
 
 function App() {
+    const [user, setUser] = useState("");
+    auth.onAuthStateChanged((authUser) => {
+        if (authUser) {
+            setUser(authUser);
+            //console.log("App1", authUser);
+        } else {
+            setUser((authUser = false));
+            //console.log("App2", authUser);
+        }
+    });
+
     return (
         <div className="app">
             <Router>
@@ -11,10 +25,10 @@ function App() {
                     <Route path="/login">
                         <Login />
                     </Route>
-                </Switch>
-                <Switch>
+
                     <Route path="/home">
-                        <Home />
+                        <HomeHeader user={user} />
+                        <DataForm user={user} />
                     </Route>
                 </Switch>
             </Router>

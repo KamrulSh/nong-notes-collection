@@ -1,7 +1,8 @@
 import { Button, TextField } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "./DataForm.css";
+import { db } from "../firebase";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -17,15 +18,51 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function DataForm() {
+function DataForm({ user }) {
+    const [name, setName] = useState([]);
+    const [date, setDate] = useState([]);
+    const [details, setDetails] = useState([]);
+    const handleUserName = (event) => {
+        setName(event.target.value);
+    };
+    const handlePostDate = (event) => {
+        setDate(event.target.value);
+    };
+    const handlePostDetails = (event) => {
+        setDetails(event.target.value);
+    };
+
+    //console.log("Dataform", user);
     const classes = useStyles();
+
+    const storeDataInFirebase = (event) => {
+        event.preventDefault();
+        //console.log(name, date, details);
+
+        db.collection("notesCollection")
+            .add({
+                id: Date.now(),
+                name: name,
+                date: date,
+                details: details,
+            })
+            .then(alert("Data has been stored"))
+            .catch((error) => {
+                alert(error.message);
+            });
+    };
+
     return (
         <div className="dataform">
-            <h1 className="dataform__username">Hello user</h1>
+            <h1 className="dataform__username">Hello {user?.email}</h1>
             <div className="dataform__container">
                 <h1 className="dataform__header">Data Input</h1>
-                <form className={classes.container}>
+                <form
+                    className={classes.container}
+                    onSubmit={storeDataInFirebase}
+                >
                     <TextField
+                        onChange={handleUserName}
                         variant="outlined"
                         margin="normal"
                         required
@@ -38,6 +75,7 @@ function DataForm() {
                     />
 
                     <TextField
+                        onChange={handlePostDate}
                         id="datetime-local"
                         label="Today's date"
                         type="datetime-local"
@@ -52,6 +90,7 @@ function DataForm() {
                     />
 
                     <TextField
+                        onChange={handlePostDetails}
                         id="outlined-multiline-static"
                         label="Desciption"
                         multiline
@@ -69,7 +108,7 @@ function DataForm() {
                         className={classes.submit}
                         fullWidth
                     >
-                        Save
+                        Save Data
                     </Button>
                 </form>
             </div>

@@ -36,15 +36,15 @@ function Login() {
 
     const handleSubmitButton = (event) => {
         event.preventDefault();
-        console.log(email);
-        console.log(password);
+        //console.log(email);
+        //console.log(password);
         auth.signInWithEmailAndPassword(email, password)
             .then((auth) => {
-                console.log(auth);
+                //console.log("Login", auth);
                 history.push("/home");
             })
             .catch((error) => {
-                console.log(error);
+                //console.log(error);
                 alert(error);
             });
     };
