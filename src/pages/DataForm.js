@@ -43,6 +43,7 @@ function DataForm({ user }) {
             .add({
                 id: Date.now(),
                 name: name,
+                email: user?.email,
                 date: date,
                 details: details,
             })

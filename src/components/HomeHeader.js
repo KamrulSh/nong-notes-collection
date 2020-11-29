@@ -2,7 +2,7 @@ import React from "react";
 import "./HomeHeader.css";
 import logo from "../nonglogo.webp";
 import { auth } from "../firebase";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function HomeHeader({ user }) {
     //console.log("HomeHeader", user);
@@ -21,9 +21,17 @@ function HomeHeader({ user }) {
     return (
         <div className="homeHeader">
             <img className="homeHeader__logo" src={logo} alt="nong_logo" />
-            <div className="homeHeader__item">
-                <h3 className="homeHeader__navAllData">All data</h3>
-            </div>
+            <Link to="/home">
+                <div className="homeHeader__item">
+                    <h3 className="homeHeader__navDataEntry">Data Entry</h3>
+                </div>
+            </Link>
+
+            <Link to="/alldata">
+                <div className="homeHeader__item">
+                    <h3 className="homeHeader__navAllData">All data</h3>
+                </div>
+            </Link>
             <div className="homeHeader__item">
                 <h3 onClick={userLogout} className="homeHeader__navLogout">
                     Logout

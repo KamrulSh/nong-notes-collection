@@ -25,10 +25,19 @@
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.homeHeader__navDataEntry {
+    border: 5px solid greenyellow;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .homeHeader__navLogout {
-    border: 5px solid rgb(255, 142, 142);
+    border: 5px solid darkorange;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
