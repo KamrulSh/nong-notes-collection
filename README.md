@@ -4,6 +4,9 @@ For user authentication, I have used Firebase email and password authentication,
 
 Deployed site: https://nong-notes-collection.web.app/login
 
+Login email: demo.user@gmail.com
+password: 123456
+
 ## Available Scripts
 
 In the project directory, you can run:
