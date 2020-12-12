@@ -21,13 +21,13 @@ function HomeHeader({ user }) {
     return (
         <div className="homeHeader">
             <img className="homeHeader__logo" src={logo} alt="nong_logo" />
-            <Link to="/home">
+            <Link to="/home" style={{ textDecoration: "none" }}>
                 <div className="homeHeader__item">
                     <h3 className="homeHeader__navDataEntry">Data Entry</h3>
                 </div>
             </Link>
 
-            <Link to="/alldata">
+            <Link to="/alldata" style={{ textDecoration: "none" }}>
                 <div className="homeHeader__item">
                     <h3 className="homeHeader__navAllData">All data</h3>
                 </div>

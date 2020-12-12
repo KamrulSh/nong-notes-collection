@@ -30,7 +30,7 @@ function App() {
                     <Route path="/home">
                         <HomeHeader user={user} />
                         <DataForm user={user} />
-                    </Route>alldata
+                    </Route>
 
                     <Route path="/alldata">
                         <HomeHeader user={user} />

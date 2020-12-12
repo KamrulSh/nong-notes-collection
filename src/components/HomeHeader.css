@@ -20,12 +20,16 @@
     color: white;
 }
 
+.homeHeader__item:hover {
+    background-color: darkorange;
+    border-radius: 10px;
+}
+
 .homeHeader__navAllData {
     border: 5px solid palegreen;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .homeHeader__navDataEntry {
@@ -33,7 +37,6 @@
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .homeHeader__navLogout {

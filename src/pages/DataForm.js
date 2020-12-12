@@ -26,7 +26,8 @@ function DataForm({ user }) {
         setName(event.target.value);
     };
     const handlePostDate = (event) => {
-        setDate(event.target.value);
+        const formatDate = new Date(event.target.value).toLocaleString();
+        setDate(formatDate);
     };
     const handlePostDetails = (event) => {
         setDetails(event.target.value);
